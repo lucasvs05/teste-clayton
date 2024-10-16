@@ -5,11 +5,17 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     
-    // Verifique as credenciais (exemplo simples)
+    // Verifique as credenciais para Admin
     if (username === 'admin' && password === 'senha123') {
         document.getElementById('loginContainer').style.display = 'none'; // Esconde o formulário de login
+        document.getElementById('admin').style.display = 'block'; // Mostra o painel do administrador
+    } 
+    // Verifique as credenciais para Funcionário
+    else if (username === 'funcionario' && password === 'senha456') {
+        document.getElementById('loginContainer').style.display = 'none'; // Esconde o formulário de login
         document.getElementById('funcionario').style.display = 'block'; // Mostra o painel do funcionário
-    } else {
+    } 
+    else {
         document.getElementById('loginMessage').textContent = 'Usuário ou senha inválidos!';
     }
 });
