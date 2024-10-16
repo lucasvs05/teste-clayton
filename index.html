@@ -1,26 +1,47 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Entregas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Edson B. Transporte</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
 </head>
 <body>
-    <h1>Bem-vindo ao Sistema de Entregas</h1>
-    <form id="loginForm">
-        <label for="username">Usuário:</label>
-        <input type="text" id="username" required>
-        <br>
-        <label for="password">Senha:</label>
-        <input type="password" id="password" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
-    <div id="entregasContainer" style="display:none;">
-        <h2>Entregas</h2>
-        <div id="entregasList"></div>
+    <div class="container">
+        <header>
+            <h1>Bem-vindo ao Sistema de Entregas! Edson B. Transportes</h1>
+        </header>
+        
+        <!-- Tela de Login -->
+        <div id="loginContainer" class="panel">
+            <h2>Tela de Login</h2>
+            <form id="loginForm">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" required>
+                <br>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+                <br>
+                <button type="submit">Login</button>
+            </form>
+            <div id="loginMessage" class="error-message"></div>
+        </div>
+
+        <!-- Painel de Funcionário -->
+        <div id="funcionario" class="panel" style="display: none;">
+            <h2>Painel do Funcionário</h2>
+            <button onclick="visualizarTodasEntregas()">Visualizar todas as entregas</button>
+            <button onclick="alterarStatusEntrega()">Alterar status da entrega</button>
+        </div>
+
+        <!-- Painel de Administrador -->
+        <div id="admin" class="panel" style="display: none;">
+            <h2>Painel do Administrador</h2>
+            <button onclick="adicionarNovaEntrega()">Adicionar nova entrega</button>
+            <button onclick="visualizarEntregasPendentes()">Visualizar entregas pendentes</button>
+        </div>
     </div>
-    <script src="script.js"></script>
+    
+    <script src="script.js"></script> <!-- Link para o JavaScript -->
 </body>
 </html>
