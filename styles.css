@@ -1,48 +1,61 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Azul claro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f0f8ff;
     margin: 0;
+    padding: 0;
 }
 
 .container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
     padding: 20px;
-    width: 300px;
     text-align: center;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+header {
+    background-color: #0066cc;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.panel {
+    margin-top: 20px;
+    padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+    background-color: white;
 }
 
 button {
-    background-color: #4682b4; /* Steel Blue */
-    color: white;
-    padding: 10px;
+    padding: 10px 15px;
+    margin: 10px;
     border: none;
     border-radius: 5px;
+    background-color: #0066cc;
+    color: white;
     cursor: pointer;
-    width: 100%;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #4169e1; /* Royal Blue */
+    background-color: #005bb5;
 }
 
-.hidden {
-    display: none;
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 24px);
 }
 
-.error {
+.error-message {
     color: red;
+    margin-top: 10px;
 }
