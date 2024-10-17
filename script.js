@@ -7,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const password = document.getElementById('password').value;
     
     // Verifique as credenciais
-    if (username === 'admin' && password === 'Admin') {
+    if (username === 'admin' && password === 'admin') {
         document.getElementById('loginContainer').style.display = 'none'; // Esconde o formulário de login
         document.getElementById('admin').style.display = 'block'; // Mostra o painel do administrador
         document.getElementById('funcionario').style.display = 'none'; // Garante que o painel do funcionário esteja escondido
