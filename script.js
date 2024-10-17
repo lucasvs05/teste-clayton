@@ -1,53 +1,30 @@
-// script.js
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    // Simulação de login
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    
-    // Verifique as credenciais
-    if (username === 'admin' && password === 'Admin') {
-        document.getElementById('loginContainer').style.display = 'none'; // Esconde o formulário de login
-        document.getElementById('admin').style.display = 'block'; // Mostra o painel do administrador
-    } else if (username === 'funcionario' && password === 'funcionario') {
-        document.getElementById('loginContainer').style.display = 'none'; // Esconde o formulário de login
-        document.getElementById('funcionario').style.display = 'block'; // Mostra o painel do funcionário
-    } else {
-        document.getElementById('loginMessage').textContent = 'Usuário ou senha inválidos!';
-    }
-});
+function showPanel(panelId) {
+    const panels = document.querySelectorAll('.panel');
+    panels.forEach(panel => {
+        panel.style.display = panel.id === panelId ? 'block' : 'none';
+    });
+}
 
-// Função para visualizar todas as entregas (apenas um exemplo)
+function exitApp() {
+    window.close(); // Ou redirecionar para outra página
+}
+
 function visualizarTodasEntregas() {
-    alert('Exibindo todas as entregas...');
-    // Aqui você pode adicionar lógica para mostrar as entregas
+    alert("Funcionalidade de visualizar todas as entregas ainda não implementada.");
 }
 
-// Função para alterar o status da entrega
 function alterarStatusEntrega() {
-    alert('Alterando o status da entrega...');
-    // Aqui você pode adicionar lógica para alterar o status
+    const idPedido = prompt("Digite o ID do Pedido:");
+    const novoStatus = prompt("Digite o novo status:");
+    alert(`Status da entrega com ID ${idPedido} alterado para "${novoStatus}".`);
 }
 
-// Função para adicionar nova entrega
 function adicionarNovaEntrega() {
-    alert('Adicionando nova entrega...');
-    // Aqui você pode adicionar lógica para adicionar nova entrega
+    const idPedido = prompt("Digite o ID do Pedido:");
+    const idMotorista = prompt("Digite o ID do Motorista:");
+    alert(`Nova entrega adicionada com ID do Pedido: ${idPedido} e ID do Motorista: ${idMotorista}.`);
 }
 
-// Função para visualizar entregas pendentes
 function visualizarEntregasPendentes() {
-    alert('Exibindo entregas pendentes...');
-    // Aqui você pode adicionar lógica para visualizar entregas pendentes
-}
-
-// Função de logout
-function logout() {
-    document.getElementById('loginContainer').style.display = 'block'; // Mostra o formulário de login
-    document.getElementById('funcionario').style.display = 'none'; // Esconde o painel do funcionário
-    document.getElementById('admin').style.display = 'none'; // Esconde o painel do administrador
-    document.getElementById('username').value = ''; // Limpa o campo de usuário
-    document.getElementById('password').value = ''; // Limpa o campo de senha
-    document.getElementById('loginMessage').textContent = ''; // Limpa a mensagem de erro
+    alert("Funcionalidade de visualizar entregas pendentes ainda não implementada.");
 }
