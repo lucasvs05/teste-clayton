@@ -1,30 +1,55 @@
+// script.js
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    
     // Simulação de login
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-
-    // Verifique as credenciais (este é um exemplo simples)
-    if (username === 'admin' && password === 'senha123') {
-        alert('Login bem-sucedido!');
-        // Aqui você pode carregar e mostrar as entregas
-        document.getElementById('entregasContainer').style.display = 'block';
-        mostrarEntregas();
+    
+    // Verifique as credenciais
+    if (username === 'admin' && password === 'Admin') {
+        document.getElementById('loginContainer').style.display = 'none'; // Esconde o formulário de login
+        document.getElementById('admin').style.display = 'block'; // Mostra o painel do administrador
+        document.getElementById('funcionario').style.display = 'none'; // Garante que o painel do funcionário esteja escondido
+    } else if (username === 'funcionario' && password === 'funcionario') {
+        document.getElementById('loginContainer').style.display = 'none'; // Esconde o formulário de login
+        document.getElementById('funcionario').style.display = 'block'; // Mostra o painel do funcionário
+        document.getElementById('admin').style.display = 'none'; // Garante que o painel do administrador esteja escondido
     } else {
-        alert('Usuário ou senha inválidos!');
+        document.getElementById('loginMessage').textContent = 'Usuário ou senha inválidos!';
     }
 });
 
-function mostrarEntregas() {
-    const entregas = [
-        { id: 1, status: 'Pendente' },
-        { id: 2, status: 'Concluída' },
-        { id: 3, status: 'Em Andamento' }
-    ];
-    const entregasList = document.getElementById('entregasList');
-    entregas.forEach(entrega => {
-        const div = document.createElement('div');
-        div.textContent = `Entrega ID: ${entrega.id}, Status: ${entrega.status}`;
-        entregasList.appendChild(div);
-    });
+// Função para visualizar todas as entregas (apenas um exemplo)
+function visualizarTodasEntregas() {
+    alert('Exibindo todas as entregas...');
+    // Aqui você pode adicionar lógica para mostrar as entregas
+}
+
+// Função para alterar o status da entrega
+function alterarStatusEntrega() {
+    alert('Alterando o status da entrega...');
+    // Aqui você pode adicionar lógica para alterar o status
+}
+
+// Função para adicionar nova entrega
+function adicionarNovaEntrega() {
+    alert('Adicionando nova entrega...');
+    // Aqui você pode adicionar lógica para adicionar nova entrega
+}
+
+// Função para visualizar entregas pendentes
+function visualizarEntregasPendentes() {
+    alert('Exibindo entregas pendentes...');
+    // Aqui você pode adicionar lógica para visualizar entregas pendentes
+}
+
+// Função de logout
+function logout() {
+    document.getElementById('loginContainer').style.display = 'block'; // Mostra o formulário de login
+    document.getElementById('funcionario').style.display = 'none'; // Esconde o painel do funcionário
+    document.getElementById('admin').style.display = 'none'; // Esconde o painel do administrador
+    document.getElementById('username').value = ''; // Limpa o campo de usuário
+    document.getElementById('password').value = ''; // Limpa o campo de senha
+    document.getElementById('loginMessage').textContent = ''; // Limpa a mensagem de erro
 }
