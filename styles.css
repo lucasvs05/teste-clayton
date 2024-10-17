@@ -1,61 +1,59 @@
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    background-color: #f0f8ff; /* Azul claro */
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    max-width: 800px;
-    margin: auto;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+header h1 {
     text-align: center;
-}
-
-header {
-    background-color: #0066cc;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-h1 {
-    margin: 0;
+    color: #0066cc; /* Azul escuro */
 }
 
 .panel {
     margin-top: 20px;
-    padding: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: white;
+    border-radius: 3px;
 }
 
 button {
-    padding: 10px 15px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0066cc;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff; /* Azul claro */
     color: white;
+    border: none;
+    border-radius: 3px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #005bb5;
-}
-
-input[type="text"],
-input[type="password"] {
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: calc(100% - 24px);
+    background-color: #0056b3; /* Azul escuro */
 }
 
 .error-message {
     color: red;
-    margin-top: 10px;
+    text-align: center;
 }
