@@ -9,31 +9,32 @@
 <body>
     <div class="container">
         <header>
-            <h1>Bem-vindo ao Sistema de Entregas!</h1>
+            <h1>Bem-vindo ao Sistema de Entregas! Edson B. Transportes</h1>
         </header>
-        <div id="loginContainer">
-            <h2>Acesso ao Sistema</h2>
-            <form id="loginForm">
-                <label for="username">Usuário:</label>
-                <input type="text" id="username" required>
-                <label for="password">Senha:</label>
-                <input type="password" id="password" required>
-                <button type="submit">Entrar</button>
-                <p id="loginMessage" class="error-message"></p>
-            </form>
-        </div>
-        <div id="funcionario" class="panel" style="display: none;">
-            <h2>Painel do Funcionário</h2>
-            <button onclick="visualizarTodasEntregas()">Visualizar todas as entregas</button>
-            <button onclick="alterarStatusEntrega()">Alterar status da entrega</button>
-            <button onclick="logout()">Sair</button>
-        </div>
-        <div id="admin" class="panel" style="display: none;">
-            <h2>Painel do Administrador</h2>
-            <button onclick="adicionarNovaEntrega()">Adicionar nova entrega</button>
-            <button onclick="visualizarEntregasPendentes()">Visualizar entregas pendentes</button>
-            <button onclick="logout()">Sair</button>
-        </div>
+        <nav>
+            <button onclick="showPanel('menu')">Menu</button>
+            <button onclick="showPanel('funcionario')">Funcionário</button>
+            <button onclick="showPanel('admin')">Administrador</button>
+            <button onclick="exitApp()">Sair</button>
+        </nav>
+        <main>
+            <div id="menu" class="panel">
+                <h2>Menu Principal</h2>
+                <!-- Outros elementos do menu -->
+            </div>
+            <div id="funcionario" class="panel" style="display: none;">
+                <h2>Painel do Funcionário</h2>
+                <button onclick="visualizarTodasEntregas()">Visualizar todas as entregas</button>
+                <button onclick="alterarStatusEntrega()">Alterar status da entrega</button>
+                <button onclick="showPanel('menu')">Voltar</button>
+            </div>
+            <div id="admin" class="panel" style="display: none;">
+                <h2>Painel do Administrador</h2>
+                <button onclick="adicionarNovaEntrega()">Adicionar nova entrega</button>
+                <button onclick="visualizarEntregasPendentes()">Visualizar entregas pendentes</button>
+                <button onclick="showPanel('menu')">Voltar</button>
+            </div>
+        </main>
     </div>
     <script src="script.js"></script> <!-- Link para o JavaScript -->
 </body>
