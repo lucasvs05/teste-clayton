@@ -1,30 +1,51 @@
-function showPanel(panelId) {
-    const panels = document.querySelectorAll('.panel');
-    panels.forEach(panel => {
-        panel.style.display = panel.id === panelId ? 'block' : 'none';
+document.getElementById('login-button').addEventListener('click', function () {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const message = document.getElementById('login-message');
+
+    // Simulação de autenticação
+    if (autenticarUsuario(username, password)) {
+        mostrarEntregas();
+    } else {
+        message.textContent = 'Usuário ou senha incorretos.';
+    }
+});
+
+document.getElementById('logout-button').addEventListener('click', function () {
+    mostrarLogin();
+});
+
+// Função simulada para autenticação
+function autenticarUsuario(username, password) {
+    return username === 'admin' && password === 'senha'; // Exemplo de autenticação
+}
+
+function mostrarEntregas() {
+    document.getElementById('login-container').classList.add('hidden');
+    document.getElementById('entregas-container').classList.remove('hidden');
+
+    // Adicionando entregas de exemplo
+    const entregas = [
+        { id: 1, destinatario: 'João Silva', status: 'Entregue' },
+        { id: 2, destinatario: 'Maria Oliveira', status: 'Pendente' },
+        { id: 3, destinatario: 'Carlos Pereira', status: 'Em trânsito' },
+    ];
+
+    const tbody = document.getElementById('entregas-table').querySelector('tbody');
+    tbody.innerHTML = ''; // Limpa as entregas anteriores
+
+    entregas.forEach(entrega => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${entrega.id}</td>
+            <td>${entrega.destinatario}</td>
+            <td>${entrega.status}</td>
+        `;
+        tbody.appendChild(row);
     });
 }
 
-function exitApp() {
-    window.close(); // Ou redirecionar para outra página
-}
-
-function visualizarTodasEntregas() {
-    alert("Funcionalidade de visualizar todas as entregas ainda não implementada.");
-}
-
-function alterarStatusEntrega() {
-    const idPedido = prompt("Digite o ID do Pedido:");
-    const novoStatus = prompt("Digite o novo status:");
-    alert(`Status da entrega com ID ${idPedido} alterado para "${novoStatus}".`);
-}
-
-function adicionarNovaEntrega() {
-    const idPedido = prompt("Digite o ID do Pedido:");
-    const idMotorista = prompt("Digite o ID do Motorista:");
-    alert(`Nova entrega adicionada com ID do Pedido: ${idPedido} e ID do Motorista: ${idMotorista}.`);
-}
-
-function visualizarEntregasPendentes() {
-    alert("Funcionalidade de visualizar entregas pendentes ainda não implementada.");
+function mostrarLogin() {
+    document.getElementById('login-container').classList.remove('hidden');
+    document.getElementById('entregas-container').classList.add('hidden');
 }
