@@ -1,48 +1,19 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Azul claro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    background-color: #f0f8ff;
 }
 
-.container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
+h1 {
     text-align: center;
+    color: #0066cc;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+form {
+    text-align: center;
+    margin: 20px;
 }
 
-button {
-    background-color: #4682b4; /* Steel Blue */
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #4169e1; /* Royal Blue */
-}
-
-.hidden {
-    display: none;
-}
-
-.error {
-    color: red;
+#entregasContainer {
+    margin-top: 20px;
+    text-align: center;
 }
